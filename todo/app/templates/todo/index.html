@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/main.css' %}">
+</head>
+<body>
+    <main class="main">
+        <section class="add-task">
+            <form method="POST" action="/todo/" class="form">
+                {% csrf_token %}
+                {{form.taskTitle}}
+                <input type="submit" name="Create Task" value="submit" class="form__button">
+            </form>
+        </section>
+
+        {% if tasks %}
+            <section class="tasks">
+                <article class="todo">
+                    <h2 class="todo__header">TODO</h2>
+                    {% for task in tasks %}
+                        {% if task.complete == False %}
+                            <article class="todo-task task">
+                                <p class="todo-task__title task__title">{{task.taskTitle}}</p>
+                                <a href="{% url 'app:updateTask' task.id %}" class="todo-task__link task__link edit-link"><img class="task__icon" src="{% static 'app/images/edit-icon.svg' %}"></a>
+                                <a href="{% url 'app:deleteTask' task.id %}" class="todo-task__link task__link delete-link"><img class="task__icon" src="{% static 'app/images/delete-icon.svg' %}"></a>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </article>
+                <article class="done">
+                    <h2 class="done__header">DONE</h2>
+                    {% for task in tasks %}
+                        {% if task.complete == True %}
+                            <article class="done-task task">
+                                <img class="task__icon done-task__icon" src="{% static 'app/images/done-task-icon.svg' %}">
+                                <p class="done-task__title task__title">{{task.taskTitle}}</p>
+                                <a href="{% url 'app:updateTask' task.id %}" class="done-task__link task__link edit-link"><img class="task__icon" src="{% static 'app/images/edit-icon.svg' %}"></a>
+                                <a href="{% url 'app:deleteTask' task.id %}" class="done-task__link task__link delete-link"><img class="task__icon" src="{% static 'app/images/delete-icon.svg' %}"></a>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </article>
+            {% else %}
+                <article class="empty">
+                    <p class="empty__information">Good job! You've got empty list of tasks.</p>
+                </article>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

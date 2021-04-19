@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/edit.css' %}">
+</head>
+<body>
+    <main class="main">
+        <h2 class="main__header">EDIT</h2>
+        <section class="edit-task">
+                <form method="POST" action="" class="form">
+                    <div class="form-container">
+                        {% csrf_token %}
+                        {{form.taskTitle}}
+                        <label for="id_complete" class="form__label">Done:</label>
+                        {{form.complete}}
+                    </div>
+                    <div class="buttons-container">
+                        <input type="submit" name="Update Task" value="submit" class="form__button form__submit">
+                        <a href="/todo/" class="form__button form__cancel">cancel</a>
+                    </div>
+                </form>
+        </section>
+    </main>
+</body>
+</html>

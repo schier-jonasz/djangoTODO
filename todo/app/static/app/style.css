@@ -1,0 +1,140 @@
+
+.add-task {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*  
+ADDING TASK FORM
+*/
+.form {
+    width: 100%;
+    text-align: center;
+}
+
+.form__title {
+    border: none;
+    outline: none;
+    width: 55%;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0;
+    background-color: transparent;
+    border: 2px solid #ffffff65;
+}
+
+.form__button {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid #ffffff65;
+    margin: 0;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.form__button:hover {
+    cursor: pointer;
+}
+
+/* 
+
+*/
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo, .done {
+    width: 100%;
+}
+
+.todo__header, .done__header {
+    text-align: center;
+    /* color: #fff; */
+    font-size: 1.75em;
+    color: #ffffff7f;
+    letter-spacing: 4px;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 4px auto;
+    border-radius: 4px;
+    background-color: #00000015;
+    padding: 0 16px;
+}
+
+.task__title {
+    margin-right: auto;
+    color: #1b1b1b;
+}
+
+.task__link {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.task__icon {
+    margin: -8px 0;
+}
+
+.edit-link, .delete-link {
+    transition: all 0.3s ease;
+}
+
+.edit-link {
+    margin-right: 16px;
+    filter: invert(46%) sepia(66%) saturate(2807%) hue-rotate(206deg) brightness(90%) contrast(101%);
+}
+
+.delete-link {
+    filter: invert(55%) sepia(14%) saturate(3108%) hue-rotate(318deg) brightness(90%) contrast(63%);
+}
+
+.edit-link:hover {
+    filter: invert(34%) sepia(81%) saturate(858%) hue-rotate(194deg) brightness(86%) contrast(96%);
+}
+.delete-link:hover {
+    filter: invert(33%) sepia(9%) saturate(5915%) hue-rotate(321deg) brightness(91%) contrast(79%);
+}
+
+/* .done-task__title {
+    text-decoration: none;
+    color: white;
+} */
+
+.done-task__icon {
+    filter: invert(46%) sepia(87%) saturate(243%) hue-rotate(109deg) brightness(97%) contrast(99%);
+    width: 4%;
+    margin-right: 8px;
+}
+
+.done-task__title {
+    position: relative;
+}
+
+.done-task__title::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #1b1b1b;
+}
+
+.empty {
+    text-align: center;
+    color: #ffffffb6;
+}
