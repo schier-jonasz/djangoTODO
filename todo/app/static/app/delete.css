@@ -1,0 +1,58 @@
+.delete-task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    width: 33%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form__button {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s linear;
+}
+
+.form__button:hover {
+    cursor: pointer;
+}
+
+.form__submit {
+    color: #7bb6a2;
+    border: 2px solid #7bb6a250;
+    font-family: 'Mukta', sans-serif;
+}
+
+.form__submit:hover {
+    background-color: #7bb6a250;
+}
+
+.form__cancel {
+    color: #eea2a2;
+    border: 2px solid #eea2a250;
+    display: inline-block;
+}
+
+.form__cancel:hover {
+    background-color: #eea2a250;
+}
+
+.delete-task__question {
+    color: #1b1b1b;
+}
+
+.delete-task__question--name {
+    color: #9c86c5;
+    font-weight: 600;
+}
